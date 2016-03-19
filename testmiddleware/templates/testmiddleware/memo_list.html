@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <title>Page({{ page_obj.number }}) = {{ page_obj.start_index }} ~ {{ page_obj.end_index }}</title>
+    </head>
+    <body>
+        {% load customfilter %}
+        {% with pagesize=memo_list|length %}
+        {% for memo in memo_list %}
+            <a href="{% url 'testmiddleware:memo_detail' memo.id %}">{{ page_obj.start_index|add:forloop.counter0 }}. {{ memo.title }}</a><br>
+        {% endfor %}
+        {% endwith %}
+
+        {% if is_paginated %}
+            <div>
+                <span>
+                    {% if page_obj.has_previous %}
+                        <a href="{% url 'testmiddleware:memo_list' %}?page={{ page_obj.previous_page_number }}">previous</a>
+                    {% endif %}
+                    <span>
+                        Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+                    </span>
+                    {% if page_obj.has_next %}
+                        <a href="{% url 'testmiddleware:memo_list' %}?page={{ page_obj.next_page_number }}">previous</a>
+                    {% endif %}
+                </span>
+            </div>
+        {% endif %}
+    </body>
+</html>
