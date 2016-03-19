@@ -1,0 +1,13 @@
+<html>
+    <head>
+        <title>Post List</title>
+    </head>
+    <body>
+        {% for post in post_list %}
+        <p>
+            <img src="{{ post.image.url }}" style="max-width: 100px;"/>
+            <a href="{% url 'blog:post_detail' post.pk %}">{{ post.title }}
+        </p>
+        {% endfor %}
+    </body>
+</html>

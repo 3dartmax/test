@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'test2',
     'test3',
     'testupload',
-    'testmiddleware'
+    'testmiddleware',
+    'blog',
 ]
 
 MIDDLEWARE_CLASSES = [

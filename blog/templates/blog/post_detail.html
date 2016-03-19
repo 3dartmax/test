@@ -1,0 +1,18 @@
+<html>
+    <head>
+        <title>Post Detail</title>
+    </head>
+    <body>
+        <h3>{{ post.title }}</h3>
+        {{ post.updated_date }}<br>
+        <img src="{{ post.image.url }}" style="max-width: 100%;"/>
+        <p>{{ post.content }}</p>
+        <br><br>
+        <a href="{% url 'blog:post_list' %}">[목록]</a>
+        <a href="{% url 'blog:comment_new' post.pk %}">[댓글]</a>
+        <br>
+        {% for comment in post.comment_set.all %}
+            {{ comment.message|linebreaks }}
+        {% endfor %}
+    </body>
+</html>
