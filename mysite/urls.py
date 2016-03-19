@@ -23,6 +23,7 @@ urlpatterns = [
     url(r'^test3/', include('test3.urls')),
     url(r'^testupload/', include('testupload.urls')),
     url(r'^testmiddleware/', include('testmiddleware.urls')),
+    url(r'^blog/', include('blog.urls'))
 ]
 
 from django.conf.urls.static import static

@@ -1,1 +1,1 @@
-./myvenv/Scripts/activate.bat
+D:\WorkRoom\Python\venv\test\myvenv\Scripts\activate.bat
