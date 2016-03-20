@@ -1,18 +1,29 @@
-<html>
-    <head>
-        <title>Post Detail</title>
-    </head>
-    <body>
-        <h3>{{ post.title }}</h3>
-        {{ post.updated_date }}<br>
-        <img src="{{ post.image.url }}" style="max-width: 100%;"/>
-        <p>{{ post.content }}</p>
-        <br><br>
-        <a href="{% url 'blog:post_list' %}">[목록]</a>
-        <a href="{% url 'blog:comment_new' post.pk %}">[댓글]</a>
-        <br>
-        {% for comment in post.comment_set.all %}
-            {{ comment.message|linebreaks }}
-        {% endfor %}
-    </body>
-</html>
+{% extends 'blog/base.html' %}
+
+{% block title %}Post Detail{% endblock %}
+
+{% block content %}
+	<div class="panel panel-info">
+		<div class="panel-heading">
+			{{ post.title }}
+		</div>
+		<div class="panel-body">
+			<p>{{ post.updated_date }}</p>
+			<p><img src="{{ post.image.url }}" style="max-width: 100%;"/></p>
+			<p>{{ post.content }}</p>
+		</div>
+		<div class="panel-footer">
+			<a class="btn btn-default" href="{% url 'blog:post_list' %}">목록</a>
+			<a class="btn btn-primary" href="{% url 'blog:comment_new' post.pk %}">댓글</a>
+		</div>
+	</div>
+	<div id="comment_list">
+		{% for comment in post.comment_set.all %}
+		<div class="media">
+			<div class="media-body">
+				{{ comment.message|linebreaks }}
+			</div>
+		</div>
+		{% endfor %}
+	</div>
+{% endblock %}

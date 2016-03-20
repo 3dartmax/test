@@ -1,13 +1,16 @@
-<html>
-    <head>
-        <title>Post List</title>
-    </head>
-    <body>
-        {% for post in post_list %}
-        <p>
+{% extends 'blog/base.html' %}
+
+{% block title %}Post List{% endblock %}
+
+{% block content %}
+    {% for post in post_list %}
+    <div class="media">
+        <div class="media-left">
             <img src="{{ post.image.url }}" style="max-width: 100px;"/>
-            <a href="{% url 'blog:post_detail' post.pk %}">{{ post.title }}
-        </p>
-        {% endfor %}
-    </body>
-</html>
+        </div>
+        <div class="media-body">
+            <a href="{% url 'blog:post_detail' post.pk %}"><h4>{{ post.title }}</h4></a>
+        </div>
+    </div>
+    {% endfor %}
+{% endblock %}

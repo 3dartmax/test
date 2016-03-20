@@ -6,6 +6,7 @@ from .forms import CommentForm
 post_list   = ListView.as_view(model=Post)
 post_detail = DetailView.as_view(model=Post)
 
+#comment_new = CreateView.as_view(model=Comment, form_class=CommentForm)
 class CommentCreateView(CreateView):
     model      = Comment
     form_class = CommentForm
@@ -14,5 +15,4 @@ class CommentCreateView(CreateView):
         comment.post = get_object_or_404(Post, pk=self.kwargs['post_pk'])
         comment.save()
         return super(CommentCreateView, self).form_valid(form)
-
 comment_new = CommentCreateView.as_view()

@@ -1,14 +1,13 @@
-<html>
-    <head>
-        <title>Post Detail</title>
-    </head>
-    <body>
-        <form method="post" action="">
-            {% csrf_token %}
-            <table>
-                {{ form.as_table }}
-            </table>
-            <input type="submit" />
-        </form>
-    </body>
-</html>
+{% extends 'blog/base.html' %}
+
+{% block title %}Post Comment New{% endblock %}
+
+{% block content %}
+    <form method="post" action="">
+        {% csrf_token %}
+        <table>
+            {{ form.as_table }}
+        </table>
+        <input type="submit" />
+    </form>
+{% endblock %}
