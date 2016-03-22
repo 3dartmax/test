@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <title>Book Detail{{ book.authors.all|length }}</title>
+    </head>
+    <body>
+        <h2>타이틀</h2>
+        <p>{{ book.name }}</p>
+        <h2>작가</h2>
+        <p>
+            {% for author in book.authors.all %}
+                {% if forloop.last %}
+                    {{ author.name }}
+                {% else %}
+                    {{ author.name }} /
+                {% endif %}
+            {% endfor %}
+        </p>
+    </body>
+</html>

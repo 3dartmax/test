@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'testupload',
     'testmiddleware',
     'blog',
+    'testmodelform',
 ]
 
 MIDDLEWARE_CLASSES = [

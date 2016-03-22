@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <title>Author List</title>
+    </head>
+    <body>
+        <ul>
+            {% for author in author_list %}
+                <li>
+                    <a href="{% url 'testmodelform:author_detail' author.pk %}">
+                        {{ forloop.counter }} / {{ author.title }} {{ author.name}} / {{ author.birth_date }}
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+        <p>
+            <a href="{% url 'testmodelform:author_new' %}">[작가추가]</a>
+        </p>
+    </body>
+</html>

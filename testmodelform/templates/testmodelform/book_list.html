@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <title>Book List</title>
+    </head>
+    <body>
+        <ul>
+            {% for book in book_list %}
+                <li>
+                    <a href="{% url 'testmodelform:book_detail' book.pk %}">
+                        {{ forloop.counter }} / {{ book.name }}
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+        <p>
+            <a href="{% url 'testmodelform:book_new' %}">[책추가]</a>
+        </p>
+    </body>
+</html>
