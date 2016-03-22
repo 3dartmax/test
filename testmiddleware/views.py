@@ -2,11 +2,10 @@ from django.shortcuts import render
 from django.views.generic import ListView, DetailView
 from .models import Memo
 
-"""
+
 # 방법1. - Middleware사용하기
 def MiddlewareList(request):
     return Memo.objects.order_by('-id')[:5]
-"""
 
 # 방법2-1. - ListView사용하기
 # paginate_by : 한페이지에 보여지는 데이터 갯수
