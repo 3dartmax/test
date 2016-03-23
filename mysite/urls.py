@@ -24,7 +24,8 @@ urlpatterns = [
     url(r'^testupload/', include('testupload.urls')),
     url(r'^testmiddleware/', include('testmiddleware.urls')),
     url(r'^blog/', include('blog.urls')),
-    url(r'^testmodelform/', include('testmodelform.urls'))
+    url(r'^testmodelform/', include('testmodelform.urls')),
+    url(r'^testview/', include('testview.urls')),
 ]
 
 from django.conf.urls.static import static

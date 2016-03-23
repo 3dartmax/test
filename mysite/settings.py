@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'testmiddleware',
     'blog',
     'testmodelform',
+    'testview',
 ]
 
 MIDDLEWARE_CLASSES = [
