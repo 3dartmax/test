@@ -72,3 +72,40 @@ h1, h2, h3, h4
 {
     color: #000000;
 }
+
+/* <input class="default" /> */
+input.default
+{
+    background-color: yellow;
+    text-align: center;
+    color: blue;
+}
+/* <input class="default" />가 focus 될때 */
+input.default:focus
+{
+    background-color: lightblue;
+    text-align: right;
+    color: red;
+}
+
+/* <input type="text" class="default" /> */
+input[type=text].default
+{
+    border:dotted 2px red;
+}
+/* <input type="text" class="default" />가 focus 될때 */
+input[type=text].default:focus
+{
+    border: 3px solid #555;
+}
+
+/* <input type="button" class="default" /> */
+input[type=button].default
+{
+    border:solid 2px blue;
+}
+/* <input type="button" class="default" />가 focus 될때 */
+input[type=button].default:focus
+{
+    border: 5px solid #555;
+}
