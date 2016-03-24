@@ -31,4 +31,8 @@ urlpatterns = [
 from django.conf.urls.static import static
 from django.conf import settings
 
+# http://localhost:8000/media/moon_02.png
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+# http://localhost:8000/html/default.html
+urlpatterns += static(settings.HTML_URL,  document_root=settings.HTML_ROOT)
